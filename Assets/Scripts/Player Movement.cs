@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canJump = true;
 
     private float MoveSpeed = 5f;
-    float JumpForce = 10f;
+    float JumpForce = 13f;
     
     Rigidbody rb;
     // Start is called before the first frame update
@@ -24,7 +24,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * (MoveSpeed * Time.deltaTime);
-            
+            if (transform.position.x <= -4)
+            {
+                transform.position = new Vector3(-4, transform.position.y, transform.position.z);
+            }
         } 
         //Move Right
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
