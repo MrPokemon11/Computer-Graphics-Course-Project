@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
     float JumpForce = 13f;
     
     Rigidbody rb;
+    
+    PlayerManager pm;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();        
+        rb = GetComponent<Rigidbody>();
+        pm = GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             canJump = false;
         }
+
+        if (transform.position.y >= 9.8)
+        {
+            pm.playerDie();
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -47,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Wall")
         {
             canJump = true;
+        }
+
+        if (collision.gameObject.tag == "Finish")
+        {
+            pm.playerWin();
         }
     }
 }
