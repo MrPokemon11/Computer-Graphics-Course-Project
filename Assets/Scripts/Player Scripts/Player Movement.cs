@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private bool canJump = true;
+    private bool hasDied = false;
 
     private float MoveSpeed = 5f;
     float JumpForce = 13f;
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (transform.position.y >= 9.8)
         {
+            hasDied = true;
             pm.playerDie();
         }
     }
@@ -57,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             canJump = true;
         }
 
-        if (collision.gameObject.tag == "Finish")
+        if (collision.gameObject.tag == "Finish" && !hasDied)
         {
             pm.playerWin();
         }
