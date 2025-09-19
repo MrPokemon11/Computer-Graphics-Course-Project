@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 474615654}
   - component: {fileID: 474615653}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Challenge4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 549053984}
   - component: {fileID: 549053983}
   m_Layer: 0
-  m_Name: Challenge1
+  m_Name: Challenge2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
