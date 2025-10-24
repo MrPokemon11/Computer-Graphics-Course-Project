@@ -1,7 +1,6 @@
 # Computer Graphics Course Project
  
-Today I learned:
-- How URP works
+Acknowledgements:
+- The duckdeer model was created by "davs27" on SketchFab: https://skfb.ly/oT8D7
 
-Today I practised:
-- 
+
