@@ -1,9 +1,16 @@
 # Computer Graphics Course Project
  
-What's in the project?
-- Course project
+Attributions:
+- Duckdeer by "davs27" on SketchFab: https://skfb.ly/oT8D7
+- All of the shader code was taken from the tutorials and lectures
 
-Stuff done for Tutorial 4:
-- From left to right, implemented Simple diffuse shading, diffuse lighting with ambience, and simple specular.
+Controls:
+- A and D to move
+- Space to jump
+- Alt+F4 to quit (sorry)
 
-<img width="1311" height="438" alt="image" src="https://github.com/user-attachments/assets/aa81ee00-5ba7-45d5-b6c3-d4919a1fddd6" />
+Goal: Reach the flag without going off the screen!
+
+Project presentation: https://youtu.be/UJA3fHpVZFI
+
+Unfortunately I am out of time for the explanation, sorry!
