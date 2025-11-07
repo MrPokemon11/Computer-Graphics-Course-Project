@@ -10,6 +10,8 @@ Shader "Custom/LUTColorCorrection"
     SubShader
     {
         Cull Off ZWrite Off ZTest Always
+        
+        Tags {"RenderType" = "Transparent"}
 
         Pass
         {
