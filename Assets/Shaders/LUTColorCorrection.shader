@@ -5,13 +5,18 @@ Shader "Custom/LUTColorCorrection"
         _MainTex ("Texture", 2D) = "white" {}
         _LUT ("LUT", 2D) = "white" {}
         _Contribution ("Contribution", Range(0, 1)) = 1
+
     }
 
     SubShader
     {
         Cull Off ZWrite Off ZTest Always
         
-        Tags {"RenderType" = "Transparent"}
+        Tags
+        {
+            "RenderType"="Transparent"
+            "RenderPipeline"="UniversalRenderPipeline"
+        }
 
         Pass
         {
@@ -68,7 +73,7 @@ Shader "Custom/LUTColorCorrection"
 
                 float2 lutPos = float2(cell / COLORS + xOffset, yOffset);
                 half4 gradedCol = SAMPLE_TEXTURE2D(_LUT, sampler_LUT, lutPos);
-
+                
                 return lerp(col, gradedCol, _Contribution);
             }
 

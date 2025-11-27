@@ -21,6 +21,8 @@ Shader "Custom/SimpleShaderWithShadows"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
 
+                        #define COLORS 32.0
+            
             struct appdata
             {
                 float4 vertex : POSITION; // Object space vertex position
