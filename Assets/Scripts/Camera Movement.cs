@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+//moves the camera based on the player's position
+public class CameraMovement : MonoBehaviour 
 {
     public Transform target;
     // Start is called before the first frame update
