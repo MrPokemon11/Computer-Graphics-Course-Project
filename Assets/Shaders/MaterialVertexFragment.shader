@@ -43,7 +43,7 @@ Shader "Custom/MaterialVertexFragment"
                 // Scale UVs and apply sine transformation
                 o.uv = v.uv;
                 o.uv.x = sin(o.uv.x * _ScaleUVX); // Scale and apply sine on X
-                o.uv.y = tan(o.uv.y * _ScaleUVY); // Scale and apply sine on Y
+                o.uv.y = tan(o.uv.y * _ScaleUVY); // Scale and apply tangent on Y
                 return o;
             }
 
