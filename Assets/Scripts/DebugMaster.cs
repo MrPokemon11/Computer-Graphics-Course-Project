@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+//toggles textures
 public class DebugMaster : MonoBehaviour
 {
     Renderer rend;
@@ -11,7 +11,7 @@ public class DebugMaster : MonoBehaviour
 
     private bool isShaded = true;
 
-    private KeyValuePair<string, var> baseShaderVals;
+    private KeyValuePair<string, string> baseShaderVals;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +30,7 @@ public class DebugMaster : MonoBehaviour
         }
     }
 
+    // toggles between untextured and textured
     void ToggleTextures()
     {
         if (isShaded)
@@ -38,7 +39,9 @@ public class DebugMaster : MonoBehaviour
         }
         else
         {
-            rend.material.shader = Shader.Find(BaseShader);
+            rend.material.shader = Shader.Find(BaseShader); // doesn't work properly; it sets the shader correctly,
+                                                            // and sometimes carries some things over, but doesn't fully
+                                                            // work
         }
         isShaded = !isShaded;
     }
@@ -54,6 +57,9 @@ public class DebugMaster : MonoBehaviour
         for (int i = 0; i < rend.material.shader.GetPropertyCount(); i++)
         {
             string propertyName = rend.material.shader.GetPropertyName(i);
+            string type = rend.material.shader.GetPropertyType(i).ToString();
+
+            //var propertyValue;
             
         }
     }

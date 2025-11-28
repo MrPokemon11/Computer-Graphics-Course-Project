@@ -1,10 +1,12 @@
 using UnityEngine;
-
+// scales the uvs of a given texture
 public class ScaleTexture : MonoBehaviour
 {
-    // scales the uvs of a given texture
+
     public GameObject player;
     Renderer rend;
+
+    private bool isActive = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +25,15 @@ public class ScaleTexture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rend.material.SetFloat("_ScaleUVY", ConvertRange(4.5f, 46f, 1, 10, player.transform.position.x));
+        if (isActive)
+        {
+            rend.material.SetFloat("_ScaleUVY", ConvertRange(4.5f, 46f, 1, 10, player.transform.position.x)); 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            isActive = !isActive;
+        }
     }
     
     
