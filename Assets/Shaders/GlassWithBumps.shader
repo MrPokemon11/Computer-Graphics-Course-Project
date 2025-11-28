@@ -119,7 +119,7 @@ Shader "Custom/GlassWithBumps"
                 half4 col  = SAMPLE_TEXTURE2D(_GrabTexture, sampler_GrabTexture, i.uvgrab.xy / i.uvgrab.w);
                 half4 tint = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
 
-                col.rgb += fresnelFactor * tint.rgb;
+                col.rgb -= fresnelFactor * tint.rgb;
                 col     *= tint * _TintIntensity;
 
                 // Emission
